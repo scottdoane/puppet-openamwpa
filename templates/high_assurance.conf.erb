@@ -1,0 +1,7 @@
+# This file is managed by puppet
+
+<IfModule !amagent_module>
+  # If we don't have the WPA loaded, stop
+  # Loading a fake non-existent module will cause a configuraiton error
+  LoadModule amagent_high_assurance_module amagent_module_not_loaded.so
+</IfModule>
