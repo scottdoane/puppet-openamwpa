@@ -1,6 +1,7 @@
 # == Class: openam_wpa::params
 #
 class openam_wpa::params {
+  $mode                  = 'enabled'
   $wpa_install_path      = '/opt'
   $wpa_version           = '4.0.0'
   $high_assurance        = true

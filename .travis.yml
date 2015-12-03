@@ -1,0 +1,7 @@
+rvm: 2.2.3
+bundler_args: ''
+notifications:
+  email:
+    - sdoane@austin.utexas.edu
+env:
+  - PUPPET_VERSION=3.6.2

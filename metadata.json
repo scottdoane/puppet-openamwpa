@@ -1,0 +1,19 @@
+{
+	"name": "scottdoane-openam_wpa",
+	"version": "0.9.0-beta",
+	"author": "scottdoane",
+	"summary": "Installation and management of the OpenAM Web Policy Agent.",
+	"license": "Apache-2.0",
+	"source": "https://github.com/scottdoane/puppet-openamwpa",
+	"project_page": "https://github.com/scottdoane/puppet-openamwpa",
+	"issues_url": "https://github.com/scottdoane/puppet-openamwpa/issues",
+	"tags": ["OpenAM", "Web Policy Agent", "apache"],
+	"dependencies": [{
+		"name": "puppetlabs-stdlib",
+		"version_range": ">= 1.0.0"
+	}],
+	"operatingsystem_support": [{
+		"operatingsystem": "RedHat",
+		"operatingsystemrelease": ["5.0", "6.0", "7.0"]
+	}]
+}
