@@ -1,9 +1,17 @@
 HOSTS:
-  openam-wpa-ci.its.utexas.edu:
+  openam-wpa-ci-cent6.its.utexas.edu:
     roles:
-      - default
+      - nodes
+      - centos
     platform: el-6-x86_64
     image: centos:centos6
+    hypervisor: docker
+  openam-wpa-ci-cent7.its.utexas.edu:
+    roles:
+      - nodes
+      - centos
+    platform: el-7-x86_64
+    image: centos:centos7
     hypervisor: docker
 CONFIG:
   type: foss

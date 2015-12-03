@@ -13,6 +13,10 @@ class openam_wpa (
   $valid_modes          = [ 'enabled', 'disabled', 'purged' ]
 
   validate_re($mode, $valid_modes)
+  validate_absolute_path($wpa_install_path)
+  validate_string($installation_filename)
+  validate_bool($high_assurance)
+  validate_bool($use_puppetlabs_apache)
 
   # Validation Architecture
   $valid_architectures = [ 'x86_64' ]
