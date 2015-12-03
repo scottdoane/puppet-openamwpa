@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/scottdoane/puppet-openamwpa.svg?branch=release%2F0.9)](https://travis-ci.org/scottdoane/puppet-openamwpa)
+
 #### Table of Contents
 
 1. [Description](#description)
