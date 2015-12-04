@@ -22,12 +22,12 @@ class openam_wpa::install
     } ->
     exec { "Unzip $installation_filename into $wpa_install_path":
       command => "unzip /tmp/$installation_filename -d $wpa_install_path",
-      creates => "${$wpa_install_path}/web_agents/apache${apache_version_designator}_agent",
+      creates => "${wpa_install_path}/web_agents/apache${apache_version_designator}_agent",
     } ->
     file { '/usr/local/bin/agentadmin':
       ensure => link,
       mode => '0644',
-      target => "${$wpa_install_path}/web_agents/apache${apache_version_designator}_agent/bin/agentadmin"
+      target => "${wpa_install_path}/web_agents/apache${apache_version_designator}_agent/bin/agentadmin"
     } ->
     exec { "rm /tmp/$installation_filename": }
   }

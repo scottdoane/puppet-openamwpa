@@ -41,14 +41,5 @@ class openam_wpa (
     disable_config => false,
   }
 
-  openam_wpa::instance { "other-name":
-    agent_number => '2',
-    agent_realm_name => 'test-realm',
-    openam_server_url => 'https://utlogin-test-core.its.utexas.edu:443',
-    agent_url => 'https://localhost.localdomain:443',
-    agent_password => 'asdfasdf', #$::wpa_agent_password,
-    apache_confd_location => '/etc/httpd/conf.d',
-    disable_config => true,
-  }
 
 }
