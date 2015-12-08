@@ -21,7 +21,9 @@ class openam_wpa::install
       source => "puppet:///modules/openam_wpa/$installation_filename"
     } ->
     exec { "Unzip $installation_filename into $wpa_install_path":
-      command => "unzip /tmp/$installation_filename -d $wpa_install_path",
+      command => "unzip /tmp/$installation_filename -d $wpa_install_path \
+&& mv ${wpa_install_path}/web_agents/apache${apache_version_designator}_agent ${wpa_install_path} \
+&& rmdir ${wpa_install_path}/web_agents",
       creates => "${wpa_install_path}/apache${apache_version_designator}_agent",
     } ->
     file { '/usr/local/bin/agentadmin':
