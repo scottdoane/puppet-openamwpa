@@ -31,12 +31,12 @@ describe 'openam_wpa::install' do
       )}
       it { is_expected.to contain_exec("Unzip Apache_v22_Linux_64bit_4.0.0.zip into /opt").with(
         'command' => "unzip /tmp/Apache_v22_Linux_64bit_4.0.0.zip -d /opt",
-        'creates' => "/opt/web_agents/apache22_agent",
+        'creates' => "/opt/apache22_agent",
       )}
       it { is_expected.to contain_file("/usr/local/bin/agentadmin").with(
         'ensure'  => 'link',
         'mode'    => '0644',
-        'target'  => "/opt/web_agents/apache22_agent/bin/agentadmin"
+        'target'  => "/opt/apache22_agent/bin/agentadmin"
       )}
     end
   end
