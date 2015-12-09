@@ -58,6 +58,8 @@ define openam_wpa::instance (
       --acceptLicence \
       --forceInstall",
     path => '/usr/bin:/usr/sbin:/bin:/usr/local/bin',
+    user => 'apache',
+    group => 'apache',
     creates => "/opt/apache${apache_version_designator}_agent/instances/agent_${agent_number}",
   }
 
