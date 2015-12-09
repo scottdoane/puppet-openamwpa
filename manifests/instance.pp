@@ -47,16 +47,16 @@ define openam_wpa::instance (
     content => "# LoadModule"
   } ->
   exec { "Creating WPA instance for $agent_profile_name":
-    command => "agentadmin --s \
-      '/tmp/wpa-${agent_profile_name}-temp.conf' \
-      '${openam_server_url}' \
-      '${agent_url}' \
-      '${agent_realm_name}' \
-      '${agent_profile_name}' \
-      '${password_file}' \
-      --changeOwner \
-      --acceptLicence \
-      --forceInstall",
+    command => "echo yes | agentadmin --s \
+'/tmp/wpa-${agent_profile_name}-temp.conf' \
+'${openam_server_url}' \
+'${agent_url}' \
+'${agent_realm_name}' \
+'${agent_profile_name}' \
+'${password_file}' \
+--changeOwner \
+--acceptLicence \
+--forceInstall",
     path => '/usr/bin:/usr/sbin:/bin:/usr/local/bin',
     user => 'apache',
     group => 'apache',
