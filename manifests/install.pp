@@ -17,11 +17,14 @@ class openam_wpa::install
   if ($::wpa_version != $wpa_version) {
     file { "/tmp/$installation_filename":
       ensure => file,
+      owner => 'apache',
+      group => 'apache',
       mode => '0644',
       source => "puppet:///modules/openam_wpa/$installation_filename"
     } ->
     exec { "Unzip $installation_filename into $wpa_install_path":
-      command => "unzip /tmp/$installation_filename -d $wpa_install_path",
+      command => "unzip /tmp/$installation_filename -d $wpa_install_path \
+&& chown -R apache:apache ${wpa_install_path}/web_agents/apache${apache_version_designator}_agent",
       creates => "${wpa_install_path}/web_agents/apache${apache_version_designator}_agent",
     } ->
     file { '/usr/local/bin/agentadmin':
