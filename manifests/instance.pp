@@ -28,6 +28,8 @@ define openam_wpa::instance (
     file { "/tmp/wpa-${agent_profile_name}-password.txt":
       ensure => file,
       mode => '0640',
+      owner => 'apache',
+      group => 'apache',
       content => $agent_password
     }
   } else {
@@ -44,6 +46,8 @@ define openam_wpa::instance (
   file { "/tmp/wpa-${agent_profile_name}-temp.conf":
     ensure => file,
     mode => '0644',
+    owner => 'apache',
+    group => 'apache',
     content => "# LoadModule"
   } ->
   exec { "Creating WPA instance for $agent_profile_name":
