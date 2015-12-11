@@ -16,12 +16,12 @@ Facter.add('wpa_version') do
   setcode do
     case Facter.value('apache_version')
     when /2.2/
-      if File.exists?('/opt/web_agents/apache22_agent/bin/agentadmin')
-        version = parse_wpa_version(%x(/opt/web_agents/apache22_agent/bin/agentadmin --v))
+      if File.exists?('/opt/apache22_agent/bin/agentadmin')
+        version = parse_wpa_version(%x(/opt/apache22_agent/bin/agentadmin --v))
       end
     when /2.4/
-      if File.exists?('/opt/web_agents/apache24_agent/bin/agentadmin')
-        version = parse_wpa_version(%x(/opt/web_agents/apache24_agent/bin/agentadmin --v))
+      if File.exists?('/opt/apache24_agent/bin/agentadmin')
+        version = parse_wpa_version(%x(/opt/apache24_agent/bin/agentadmin --v))
       end
     else
       version = 'undef'
