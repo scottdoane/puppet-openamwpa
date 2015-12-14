@@ -47,6 +47,7 @@ define openam_wpa::instance (
     content => "# LoadModule"
   } ->
   exec { "Creating WPA instance for $agent_profile_name":
+    user => 'apache',
     command => "agentadmin --s \
       '/tmp/wpa-${agent_profile_name}-temp.conf' \
       '${openam_server_url}' \
